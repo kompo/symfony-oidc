@@ -1,5 +1,5 @@
 {
-  "name": "drenso/symfony-oidc-bundle",
+  "name": "kompo/symfony-oidc",
   "description": "OpenID connect bundle for Symfony",
   "keywords": [
     "symfony",
