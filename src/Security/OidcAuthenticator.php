@@ -97,7 +97,7 @@ class OidcAuthenticator implements InteractiveAuthenticatorInterface, Authentica
 
       return $passport;
     } catch (OidcException $e) {
-      throw new OidcAuthenticationException('OIDC authentication failed', $e);
+      throw new OidcAuthenticationException('OIDC authentication failed '.$e->getMessage(), $e);
     }
   }
 
