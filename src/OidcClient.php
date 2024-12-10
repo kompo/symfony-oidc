@@ -230,8 +230,11 @@ class OidcClient implements OidcClientInterface
     $jsonData = mb_convert_encoding($jsonData, 'UTF-8');
 
     // Read the data
-    //$data = json_decode($jsonData, true);
-    $data = OidcJwtHelper::parseToken($jsonData)->claims()->all();
+    if(str_contains($_SERVER['HTTP_HOST'], '.local')){
+        $data = OidcJwtHelper::parseToken($jsonData)->claims()->all();
+    } else {
+        $data = json_decode($jsonData, true);
+    }
 
     // Check data due
     if (!is_array($data)) {
